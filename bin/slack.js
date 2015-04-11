@@ -3,12 +3,12 @@
 var Slack = require('node-slackr');
 var argv = require('minimist')(process.argv.slice(2));
 
-var slackToken = process.env.SLACK_TOKEN,
-    slackUrl = process.env.SLACK_URL,
+var slackUrl = process.env.SLACK_URL,
     channelName = argv.c || process.env.SLACK_CHANNEL,
-    userName = argv.u || process.env.USER,
+    userName = argv.u || process.env.SLACK_USER || process.env.USER,
     message = argv.m;
 
+// Variable validations
 if ( slackToken === undefined || slackUrl === undefined ) {
   console.log('undefined SLACK_TOKEN or slackUrl as Env Variable');
   process.exit(1);
@@ -24,6 +24,7 @@ if ( typeof(message) !== 'string' ){
   process.exit(1);
 }
 
+// Define an example for payload
 var payload = { 
     username: userName,
     channel: channelName,
@@ -44,6 +45,7 @@ var payload = {
     ]
 };
 
+// Code
 slack = new Slack(slackUrl);
 slack.notify(payload, function(err, response) {
   if (err) console.log;
