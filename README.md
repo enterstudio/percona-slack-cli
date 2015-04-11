@@ -40,6 +40,11 @@ Send a Direct Message
 slack -c "@someuser" -m "Direct message from bot"
 ```
 
+Change status style
+```sh
+slack -s danger -m "Houston! we have a problem!"
+```
+
 ###TODO:
 
 - Customize your attachments

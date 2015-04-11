@@ -1,6 +1,6 @@
 {
   "name": "percona-slack-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Percona CLI for Slack",
   "main": "index.js",
   "scripts": {

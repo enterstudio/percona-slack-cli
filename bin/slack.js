@@ -6,7 +6,8 @@ var argv = require('minimist')(process.argv.slice(2));
 var slackUrl = process.env.SLACK_URL,
     channelName = argv.c || process.env.SLACK_CHANNEL,
     userName = argv.u || process.env.SLACK_USER || process.env.USER,
-    message = argv.m;
+    message = argv.m,
+    msgStatus = argv.s || "good";
 
 // Variable validations
 if ( slackUrl === undefined ) {
@@ -24,20 +25,23 @@ if ( typeof(message) !== 'string' ){
   process.exit(1);
 }
 
+if ( msgStatus != "good" && msgStatus != "warning" && msgStatus != "danger" ){
+  console.log('Define message status as: [good|warning|danger]');
+  process.exit(1);
+}
+
 // Define an example for payload
 var payload = { 
     username: userName,
     channel: channelName,
     icon_emoji: ":ghost:",
-    text: message,
     attachments: [
        {
-	  "pretext":"pretext",
-	  "color": "#0000FF",
+	  "color": msgStatus,
 	  "fields":[
 	     {
-		"title":"title",
-		"value":"foobar",
+		"title":"Slack CLI",
+		"value": message,
 		"short":false
 	     }
 	  ]
