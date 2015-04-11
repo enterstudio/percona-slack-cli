@@ -1,0 +1,24 @@
+{
+  "name": "percona-slack-cli",
+  "version": "0.1.0",
+  "description": "Percona CLI for Slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtomaszon/percona-slack-cli"
+  },
+  "keywords": [
+    "percona",
+    "slack",
+    "cli"
+  ],
+  "author": "Javier Tomas Zon <javier.zon@percona.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jtomaszon/percona-slack-cli/issues"
+  },
+  "homepage": "https://github.com/jtomaszon/percona-slack-cli"
+}
