@@ -9,7 +9,7 @@ var slackUrl = process.env.SLACK_URL,
     message = argv.m;
 
 // Variable validations
-if ( slackToken === undefined || slackUrl === undefined ) {
+if ( slackUrl === undefined ) {
   console.log('undefined SLACK_TOKEN or slackUrl as Env Variable');
   process.exit(1);
 }
