@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/jtomaszon/percona-slack-cli/issues"
   },
-  "homepage": "https://github.com/jtomaszon/percona-slack-cli"
+  "homepage": "https://github.com/jtomaszon/percona-slack-cli",
+  "dependencies": {
+    "minimist": "^1.1.1",
+    "node-slackr": "^0.1.0"
+  },
+  "bin": {
+    "slack": "bin/slack.js"
+  }
 }
