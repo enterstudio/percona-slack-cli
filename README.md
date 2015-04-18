@@ -7,7 +7,10 @@ A simple node.js library for send notifications to [Slack](https://slack.com/) v
 
 Installation
 =======
-You can also install via npm:
+
+Install nodeJS from repository: [check here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+
+Then install with npm:
 ```sh
 npm install -g percona-slack-cli
 ```
